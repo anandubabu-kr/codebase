@@ -1,4 +1,3 @@
-import AboutUs from '../about/about.js';
 import React from 'react';
 import './style.css';
 import useStyles from './styles.js';
@@ -20,13 +19,12 @@ import {
 } from '@mui/material';
 
 export default function App() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <div>
       <NavBar />
       <header>
         <HeaderInfo />
-        {/* <AboutUs /> */}
       </header>
       <main>
         <CourseList />
