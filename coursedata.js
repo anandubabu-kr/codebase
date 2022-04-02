@@ -1,11 +1,4 @@
-const express= require('express')
-// const data=require('./coursedata.js','utf-8',(err,data)=>{
-const fs=require('fs')
-
-const app=express()
-const PORT=2500
-
-const responseData=[
+[
     {
       id: '001',
       title: 'Web designing',
@@ -32,19 +25,4 @@ const responseData=[
     },
   ]
   
-
-app.get('/',(req,res)=>{
-    fs.readFile('./coursedata.js','utf-8',(err,data)=>{
-        if(err){
-
-            res.json({data:'helo'})
-        }else{
-            const jsonContent = JSON.stringify(responseData);
-            res.end(jsonContent)
-        }
-    })
-})
-
-app.listen(PORT,()=>{
-    console.log(`app up and running at http://localhost:${PORT}`)
-})
+  
