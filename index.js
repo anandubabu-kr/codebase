@@ -32,7 +32,7 @@ const responseData=[
     },
   ]
   
-
+  
 app.get('/',(req,res)=>{
     fs.readFile('./coursedata.js','utf-8',(err,data)=>{
         if(err){
