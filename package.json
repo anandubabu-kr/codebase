@@ -1,0 +1,22 @@
+{
+  "name": "server-side",
+  "version": "1.0.0",
+  "description": "\"Back-end of codebasics mentors app\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandubabu-kr/codebase.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Anandu Babu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anandubabu-kr/codebase/issues"
+  },
+  "homepage": "https://github.com/anandubabu-kr/codebase#readme"
+}
