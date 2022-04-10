@@ -4,7 +4,7 @@ import './App.css';
 import {getCourseList} from './actions/courses'
 import { useEffect } from 'react';
 import{useDispatch} from 'react-redux'
-import Footer from './Components/footer/footer';
+import Footer from './Components/footer/Footer';
 
 
 export default function App() {
