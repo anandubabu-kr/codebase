@@ -17,12 +17,6 @@ const cards = [
     description:
       'Improve your coding skills with solving easy to hard algorithms. languages : C, C++, Java, Python',
   },
-  {
-    id: '004',
-    title: 'Become a UNIX admin',
-    description:
-      'Get in to CLI interface by learning shell scripting, setting-up aoutomation scripts and much more on your free linux vertual machine.',
-  },
 ];
 
 export default cards;

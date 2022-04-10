@@ -1,8 +1,7 @@
 import React from 'react';
-import './style.css';
 import useStyles from './styles.js';
 import cards from '../courses.js';
-
+import logo from '../../assets/Log-horizondal.png'
 import {
   Typography,
   ButtonGroup,
@@ -17,11 +16,14 @@ import {
   Grid,
   AppBar,
 } from '@mui/material';
+import { useSelector } from 'react-redux';
 
-export default function App() {
-  // const classes = useStyles();
+export default function HomePage() {
+  const classes = useStyles();
+  const courses = useSelector((state) => state.courses)
+  console.log('Dispatched : ', courses)
   return (
-    <div>
+    <div className={classes.main}>
       <NavBar />
       <header>
         <HeaderInfo />
@@ -34,15 +36,13 @@ export default function App() {
 }
 
 const NavBar = () => {
+  const classes = useStyles();
   return (
     <div>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar className={classes.appbar} color="inherit" position="relative">
         <Toolbar>
-          {/* <PhotoCameraIcon className={clasess.icon} /> */}
-          <Typography variant="body" paragraph position="center">
-            Build your base in Coding
-          </Typography>
+          <img src={logo} className={classes.appBarLogo} alt="Horizondal CodeBasics logo" />
         </Toolbar>
       </AppBar>
     </div>
@@ -53,47 +53,47 @@ const HeaderInfo = () => {
   const classes = useStyles();
   return (
     <div>
-      <Container className={classes.container} maxWidth="sm">
-        <Typography
-          align="center"
-          color="primary"
-          component="h4"
-          variant="h4"
-          gutterBottom
-        >
-          We will pick you up from where you get stuck :)
-        </Typography>
-        <Typography
-          align="center"
-          component="body"
-          variant="body"
-          paragraph
-          gutterBottom
-        >
-          Hello students, <br />
-          CodeBase is a community of programming experts, who would like to
-          share their knowledge and skills with you.
-        </Typography>
-        <div>
-          <Grid container spacing={2} justifyContent="center">
-            <Grid item justify="center">
-              <ButtonGroup>
-                <Button variant="outlined">About us </Button>
-                <Button variant="contained">Courses </Button>
-              </ButtonGroup>
-            </Grid>
+        <Grid container className={classes.container} spacing={2}>
+          <Grid item xs={12} md={6}
+          direction='column'
+          >
+            <Typography
+              component="h4"
+              variant="h4"
+              gutterBottom
+              className={classes.header}
+            >
+              We will pick you up from where you get stuck :)
+            </Typography>
+            <Typography
+              paragraph
+              background='transparent'
+              className={classes.header__info}
+              gutterBottom
+            >
+              Hello students, <br />
+              CodeBase is a community of programming experts, who would like to
+              share their knowledge and skills with you.
+            </Typography>
+            <div>
+                  <ButtonGroup className={classes.header__info}>
+                    <Button variant="contained">Courses </Button>
+                    <Button variant="outlined">About us </Button>
+                  </ButtonGroup>
+            </div>
           </Grid>
-        </div>
-      </Container>
+        </Grid>
+
     </div>
   );
 };
 
 const CourseList = () => {
   const classes = useStyles();
+
   return (
     <div>
-      <Container className={classes.container} maxWidth="md">
+      <Container className={classes.coursel__lists} >
         <Grid container justifyContent="center" spacing={4}>
           {cards.map((card) => (
             <CourseItem key={card.id} card={card} />
@@ -106,9 +106,10 @@ const CourseList = () => {
 
 const CourseItem = (props) => {
   const card = props.card;
+  const classes = useStyles();
   return (
-    <Grid justify="center" item xs={9} sm={6} md={3}>
-      <Card>
+    <Grid justify="center" item xs={12} sm={6} md={3}>
+      <Card className={classes.card}>
         <CardMedia
           component="img"
           height="200"
@@ -119,7 +120,7 @@ const CourseItem = (props) => {
           <Typography variant="h6" component="h6">
             {card.title}
           </Typography>
-          <Typography paragraph variant="body">
+          <Typography paragraph >
             {card.description}
           </Typography>
         </CardContent>
