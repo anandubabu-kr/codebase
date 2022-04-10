@@ -57,28 +57,22 @@ const HeaderInfo = () => {
           <Grid item xs={12} md={6}
           direction='column'
           >
-            <Typography
-              component="h4"
-              variant="h4"
-              gutterBottom
-              className={classes.header}
+            {/* Typography variant="h4" component="h4" */}
+            <Typography variant="h4" component="h4" className={classes.header}
             >
               We will pick you up from where you get stuck :)
             </Typography>
-            <Typography
-              paragraph
-              background='transparent'
+            <p
               className={classes.header__info}
-              gutterBottom
             >
               Hello students, <br />
               CodeBase is a community of programming experts, who would like to
               share their knowledge and skills with you.
-            </Typography>
+            </p>
             <div>
                   <ButtonGroup className={classes.header__info}>
-                    <Button variant="contained">Courses </Button>
-                    <Button variant="outlined">About us </Button>
+                    <Button variant="contained" onClick={()=>{window.location='#courselist'}} >Courses </Button>
+                    <Button variant="outlined" onClick={()=>{alert('ERROR : 404 - Page is yet to finish !')}}>About us </Button>
                   </ButtonGroup>
             </div>
           </Grid>
@@ -93,8 +87,11 @@ const CourseList = () => {
 
   return (
     <div>
-      <Container className={classes.coursel__lists} >
-        <Grid container justifyContent="center" spacing={4}>
+      <Container id='courselist' className={classes.course__lists} >
+      <Typography variant="h4" component="h4" textAlign='center' className={classes.course__heading}>
+      Pick your tech to start
+      </Typography>
+        <Grid container justifyContent="center" spacing={5}>
           {cards.map((card) => (
             <CourseItem key={card.id} card={card} />
           ))}
@@ -108,18 +105,18 @@ const CourseItem = (props) => {
   const card = props.card;
   const classes = useStyles();
   return (
-    <Grid justify="center" item xs={12} sm={6} md={3}>
-      <Card className={classes.card}>
+    <Grid  textAlign='center' alignItems='center' item xs={12} sm={6} md={3}>
+      <Card  className={classes.card}>
         <CardMedia
           component="img"
           height="200"
-          image="http://unsplash.it/200/200"
-          alt="Paella dish"
+          image={card.image}
+          alt="Course Image"
         />
         <CardContent>
           <Typography variant="h6" component="h6">
             {card.title}
-          </Typography>
+            </Typography>
           <Typography paragraph >
             {card.description}
           </Typography>

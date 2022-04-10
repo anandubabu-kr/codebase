@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   main:{
     backgroundImage:`url(${background})`,
     backgroundRepeat:'no-repeat',
-    backgroundSize:'contain',
+    backgroundSize:'cover',
     backgroundPosition:'top center',
   },
   appbar:{
@@ -26,25 +26,33 @@ const useStyles = makeStyles({
     maxHeight:'40px'
   },
   header:{
-    fontWeight:'900',
+    fontWeight:'900 !important',
     fontStyle:'normal',
-    marginTop:'6rem'
+    marginTop:'20% !important'
   },
   header__info:{
-    marginTop:'3rem'
+    marginTop:'3rem',
+  },
+  course__heading:{
+    padding:'3rem',
+    fontWeight:'900 !important',
+
   },
   card:{
-    maxHeight:'400px'
+    minHeight:'100%',
+    maxWidth:'300px',
+    margin:'auto !important',
+    borderRadius:'20px !important'
   },
-  coursel__lists:{
+  course__lists:{
     background:'#C2D5F6',
-    padding:'2rem'
+    padding:'2rem',
+    marginBottom:'2rem'
   },
   container: {
-    padding: '2rem 0 0 2rem',
+    padding: '0 5rem  0 5rem',
     minHeight:'100vh'
   },
-
   icon: {
     marginRight: '1rem',
   },
